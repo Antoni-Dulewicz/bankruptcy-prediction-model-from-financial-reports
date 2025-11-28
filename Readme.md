@@ -1,13 +1,28 @@
-# Cel
+# Income Prediction Using Multilayer Perceptron (MLP)
 
-Celem laboratorium jest przedstawienie podstaw uczenia maszynowego z 
-wykorzystaniem sieci neuronowych.
+This project demonstrates the development of a **multilayer perceptron (MLP) model** for predicting whether an individual earns above or below $50,000 per year based on demographic data. The dataset used is substantially imbalanced, with a **75:25 ratio** between the majority and minority classes.
 
-1. Krótki wstęp do sieci neuronowych. Regresja liniowa i logistyczna za pomocą 
-   sieci neuronowej (spadek wzdłuż gradientu).
-2. Krótki wstęp do PyTorcha (?).
-3. Najważniejsze hiperparametry w uczeniu sieci neuronowych: stała ucząca, wielkość paczki, liczba epok.
-4. Zaawansowane hiperparametry w uczeniu sieci: LR scheduler, algorytm optymalizacji, architektura sieci (porpozycja).
-5. Rola akceleracji sprzętowej oraz rozmiar pamięci w uczeniu sieci neuronowych.
+## Key Features
 
-Zawartość laboratorium dostępna jest w [notebooku](lab_3.ipynb).
+- **Multilayer Perceptron (MLP)** architecture designed for tabular demographic data.
+- **Robustness and generalization improvements** implemented using:
+  - **Class weighting** to address class imbalance.
+  - **L2 regularization (weight decay)** to prevent overfitting.
+  - **Dropout layers** for further regularization.
+  - **Batch normalization** to stabilize and accelerate training.
+- Achieved a **significant performance boost**, raising AUROC from **81% to 91%**.
+
+## Performance Metrics
+
+- AUROC: 91%
+- Precision, Recall, and F1-score optimized using threshold tuning.
+- Effective handling of imbalanced classes through weighted loss.
+
+## Usage
+
+1. Preprocess the demographic dataset.
+2. Define the MLP architecture with normalization and dropout layers.
+3. Train the network using **AdamW optimizer** and minibatch gradient descent.
+4. Evaluate on the test set with metrics including AUROC, precision, recall, and F1-score.
+
+This project demonstrates practical techniques for improving neural network performance on **imbalanced tabular datasets** and can serve as a template for similar predictive modeling tasks.
